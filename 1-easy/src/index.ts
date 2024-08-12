@@ -17,7 +17,7 @@ app.post("/sum",async(req, res) => {
 
 
     res.json({
-        answer,id:resp.id
+        answer
     })
 });
 
