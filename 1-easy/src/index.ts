@@ -21,3 +21,20 @@ app.post("/sum",async(req, res) => {
     })
 });
 
+app.post("/multiply",async(req, res) => {
+    const a = req.body.a;
+    const b = req.body.b;
+    const answer = a * b;
+
+    await prismaClient.request.create({
+       data:{ a:a,
+        b:b,
+        answer:answer,
+        type:"multiply"
+    }})
+
+
+    res.json({
+        answer
+    })
+});
